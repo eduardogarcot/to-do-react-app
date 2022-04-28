@@ -1,8 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import './styles/tailwind.css';
+import http from './services/http';
 
 function App() {
+  http.post('/login')
+  .then(res=>console.log(res));
+  
   return (
     <div className="App">
       <header className="App-header">
