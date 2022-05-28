@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import './styles/tailwind.css';
-
+import http from './services/http';
+import LoginForm from './views/Login/login';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
+  
+
   return (
-    <div className="App">
+    /*{ <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p className='mb-4 w-40'>
@@ -18,8 +23,15 @@ function App() {
         >
           Learn React
         </a>
+
+
       </header>
-    </div>
+    </div> }*/
+    <>
+     <LoginForm/>
+     <ToastContainer/>  
+    </>
+    
   );
 }
 
