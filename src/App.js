@@ -3,10 +3,10 @@ import './App.css';
 import './styles/tailwind.css';
 import http from './services/http';
 import LoginForm from './views/Login/login';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
-  http.post('/login')
-  .then(res=>console.log(res));
+  
 
   return (
     /*{ <div className="App">
@@ -27,8 +27,11 @@ function App() {
 
       </header>
     </div> }*/
-
-    <LoginForm/>
+    <>
+     <LoginForm/>
+     <ToastContainer/>  
+    </>
+    
   );
 }
 

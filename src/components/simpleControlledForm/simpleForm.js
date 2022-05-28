@@ -11,7 +11,7 @@ const SimpleControlledForm = ({fields, validateSchema, initialValues, handleSubm
         validationSchema={validateSchema}
         onSubmit={async (values) => handleSubmit(values)}
     >
-        <Form>
+        <Form className='flex flex-wrap'>
             {fields.map((field, index)=><ControlledField
                 key={index}
                 className={field.className}
