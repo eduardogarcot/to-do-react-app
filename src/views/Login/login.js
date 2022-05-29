@@ -4,8 +4,15 @@ import SimpleControlledForm from "components/simpleControlledForm/simpleForm";
 import http from 'services/http';
 import auth, { isLoggedIn } from 'services/auth';
 import { toast } from "react-toastify";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const LoginForm = () => {
+    const location = useLocation();
+    const navigate = useNavigate();if (auth.isLoggedIn) {
+        const { from } = location.state || { from: { pathname: "/" } };
+        navigate(from, { replace: true });
+      }
+    
     const login = [
         {
             type: 'email',
@@ -39,8 +46,9 @@ const LoginForm = () => {
         isLoggedIn();
         http.post('/login', values)
         .then((response) => {
-            console.log(response);
             auth.logIn(response.data);
+            const { from } = location.state || { from: { pathname: "/" } };
+            navigate(from, { replace: true });
         })
         .catch((error) => {
             console.log(error);
@@ -56,7 +64,6 @@ const LoginForm = () => {
                 fields={login}
                 handleSubmit={handleClick}
             />
-            <p> Hola 123 {auth.isLoggedIn() & auth.isLoggedIn()}</p>
         </div>
       );
 }
