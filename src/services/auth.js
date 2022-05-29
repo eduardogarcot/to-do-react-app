@@ -59,6 +59,7 @@ const auth = {
     getToken,
     getAccountId,
     logIn,
+    logOut,
     fakeLoginService,
     isLoggedIn,
   };
