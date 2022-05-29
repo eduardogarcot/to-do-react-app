@@ -1,13 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import SimpleControlledForm from "components/simpleControlledForm/simpleForm";
 import http from 'services/http';
 import auth, { isLoggedIn } from 'services/auth';
 import { toast } from "react-toastify";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { logIn } from 'redux/slices/isLogged';
 
 const LoginForm = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
     const navigate = useNavigate();if (auth.isLoggedIn) {
         const { from } = location.state || { from: { pathname: "/" } };
         navigate(from, { replace: true });
@@ -48,6 +51,7 @@ const LoginForm = () => {
         .then((response) => {
             auth.logIn(response.data);
             const { from } = location.state || { from: { pathname: "/" } };
+            dispatch(logIn());
             navigate(from, { replace: true });
         })
         .catch((error) => {
@@ -56,15 +60,17 @@ const LoginForm = () => {
         });
     }; 
     
-    return (
-        <div className='w-1/2 mx-[25%] my-10'>
+    return (<>
+    
+    <div className='w-1/2 mx-[25%] my-10'>
             <SimpleControlledForm
                 initialValues={{username:'', password:''}}
                 validateSchema={SignupSchema}
                 fields={login}
                 handleSubmit={handleClick}
             />
-        </div>
+        </div>        
+    </>
       );
 }
  

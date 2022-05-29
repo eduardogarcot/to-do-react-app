@@ -4,11 +4,18 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import './styles/tailwind.css';
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from 'components/NavBar';
+import MainContent from 'components/mainContent';
+import Footer from 'components/Footer';
 
 function App() {
   return (<BrowserRouter>
-      <Routes/>
-      <ToastContainer/>  
+      <NavBar/>
+      <MainContent>
+        <Routes/>
+        <ToastContainer/>  
+      </MainContent>
+      <Footer/>
     </BrowserRouter>
   );
 }
