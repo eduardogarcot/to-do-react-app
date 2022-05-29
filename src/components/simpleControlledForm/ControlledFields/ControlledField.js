@@ -1,7 +1,7 @@
 import React from 'react';
 import DefaultInput from './DefaultInput';
 
-const DEFAULT_INPUTS = ['text', 'email', 'password', 'select'];
+// const DEFAULT_INPUTS = ['text', 'email', 'password', 'select'];
 const ControlledField = ({
     className,
     type,

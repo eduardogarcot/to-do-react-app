@@ -53,7 +53,7 @@ const fakeLoginService = (username, password) => {
 }
 
 
-export default {
+const auth = {
     setExpirationToken,
     getExpirationToken,
     getToken,
@@ -62,3 +62,5 @@ export default {
     fakeLoginService,
     isLoggedIn,
   };
+
+  export default auth;
