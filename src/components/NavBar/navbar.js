@@ -1,10 +1,11 @@
 import React,{ useState } from 'react';
 import auth from 'services/auth';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectIsLogged } from 'redux/slices/isLogged';
+import { logOut, selectIsLogged } from 'redux/slices/isLogged';
 import { useLocation, useNavigate} from 'react-router-dom';
 import unknowUser from 'assets/images/unknown-user.svg';
 import { toast } from 'react-toastify';
+import Logo from 'components/Logo';
 
 
 const NavBar = () => {
@@ -22,6 +23,7 @@ const NavBar = () => {
         toast.info("Not released feature. We are working on it");
     }
     const handleClickLogOut = () => {
+        dispatch(logOut());
         auth.logOut();
     }
     
@@ -33,7 +35,9 @@ const NavBar = () => {
     if (noNavbar.includes(location.pathname)) return <></>;
     return (<>
         <nav className='flex flex-row sticky top-0 z-50 items-center  p-4 w-full min-h-[8rem] md:min-h-[5rem] border-b border-slate-400 border-solid bg-sky-300 '>
-            <div className='flex w-3/4 '> </div>
+            <div className='flex w-3/4 '>
+                <Logo theme='navbar'/>
+            </div>
             <div className='flex w-1/4 justify-center'>
                 {!isLogged && <button 
                         className='w-1/2 p-2 border border-solid bg-white border-slate-400 rounded hover:bg-blue-200 hover:border-white' 
