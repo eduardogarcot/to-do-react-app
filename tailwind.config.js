@@ -4,6 +4,7 @@ module.exports = {
     fontFamily: {
       plantin: ['Plantin', 'sans-serif'],
       sofia: ['Sofia', 'serif'],
+      logo: ['Permanent Marker', 'cursive'],
     },
     extend: {},
   },

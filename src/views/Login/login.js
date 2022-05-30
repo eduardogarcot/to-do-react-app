@@ -7,6 +7,7 @@ import auth, { isLoggedIn } from 'services/auth';
 import { toast } from "react-toastify";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { logIn } from 'redux/slices/isLogged';
+import Logo from 'components/Logo';
 
 const LoginForm = () => {
     const location = useLocation();
@@ -22,14 +23,14 @@ const LoginForm = () => {
             name:'username',
             label: 'Username',
             value:'',
-            className:'w-full px-[25%] py-4'
+            className:'w-full px-[2%] md:px-[30%] py-4'
         },
         {
             type: 'password',
             name:'password',
             label: 'Password',
             value:'',
-            className:'w-full px-[25%] py-4'
+            className:'w-full px-[2%] md:px-[30%] py-4'
         }
     ];
     
@@ -50,19 +51,19 @@ const LoginForm = () => {
         http.post('/login', values)
         .then((response) => {
             auth.logIn(response.data);
-            const { from } = location.state || { from: { pathname: "/" } };
+            const { from } = location.state || { from: { pathname: "/home" } };
             dispatch(logIn());
             navigate(from, { replace: true });
         })
         .catch((error) => {
             console.log(error);
-            toast.error('A terrible error has ocurred!');
+            toast.error('Username or Password invalids.\n Please try again.');
         });
     }; 
     
     return (<>
-    
-    <div className='w-1/2 mx-[25%] my-10'>
+    <Logo theme='login'/>
+    <div className='w-[90%] md:w-1/2 mx-[5%] md:mx-[25%] my-10'>
             <SimpleControlledForm
                 initialValues={{username:'', password:''}}
                 validateSchema={SignupSchema}
