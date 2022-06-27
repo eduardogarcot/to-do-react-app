@@ -35,7 +35,7 @@ const NavBar = () => {
     if (noNavbar.includes(location.pathname)) return <></>;
     
     return (<>
-        <nav className='flex flex-row sticky top-0 z-50 items-center  p-4 w-full min-h-[8rem] md:min-h-[5rem] border-b border-slate-400 border-solid bg-sky-300 '>
+        <nav className='flex flex-row sticky top-0 z-50 items-center p-4 w-full min-h-[10vh] border-b border-slate-400 border-solid bg-sky-300 '>
             <div className='flex w-3/4 '>
                 <Logo theme='navbar'/>
             </div>
