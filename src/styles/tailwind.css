@@ -529,20 +529,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 3rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.min-h-\[2rem\] {
-  min-height: 2rem;
+.min-h-\[5vh\] {
+  min-height: 5vh;
 }
 
 .min-h-\[10vh\] {
   min-height: 10vh;
-}
-
-.min-h-\[5vh\] {
-  min-height: 5vh;
 }
 
 .w-full {
@@ -812,51 +804,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: block;
   }
 
-  .md\:max-h-\[85vh\] {
-    max-height: 85vh;
-  }
-
-  .md\:min-h-\[50rem\] {
-    min-height: 50rem;
-  }
-
-  .md\:min-h-\[8vh\] {
-    min-height: 8vh;
-  }
-
   .md\:min-h-\[85vh\] {
     min-height: 85vh;
   }
 
-  .md\:min-h-fit {
-    min-height: -webkit-fit-content;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
-  }
-
-  .md\:min-h-max {
-    min-height: -webkit-max-content;
-    min-height: max-content;
-  }
-
-  .md\:min-h-\[5vh\] {
-    min-height: 5vh;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
+  .md\:w-40 {
+    width: 10rem;
   }
 
   .md\:w-12 {
     width: 3rem;
   }
 
-  .md\:w-32 {
-    width: 8rem;
-  }
-
-  .md\:w-40 {
-    width: 10rem;
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:translate-y-3\/4 {
