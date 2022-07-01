@@ -1,15 +1,23 @@
-import SideBarItem from 'components/SideBarItem';
+
 import React, { useState } from 'react';
+import SideBarItems from './sideBarItems';
+
+const items = [
+  {label:'Home', iconName:'home.png', url:'/home'},
+  {label:'Projects', iconName:'computer.png', url:'/board'},
+  {label:'Board', iconName:'board.png', url:'/board'},
+  {label:'Analytics', iconName:'performance.png', url:'/home'},
+  {label:'Settings', iconName:'settings.png', url:'/home'}
+];
 
 const SideBar = (props) => {
   const [show, setShow] = useState(true);
   const getClassName = () => {
-    return show ? 'md:w-[20%]' : 'md:w-[5%]';
+    return show ? 'md:w-[15%]' : 'md:w-[5%] md:items-center';
   }
-  return ( <nav className={`min-h-[5vh] bg-cyan-700 ${getClassName()}`}>
+  return ( <nav className={`flex md:flex-col min-h-[5vh] bg-cyan-700 ${getClassName()}`}>
     <button onClick={()=>setShow(!show)}>{show?'Hide':'Show'}</button>
-    <SideBarItem label='Felipe el Cojo' show={show}/>
-    <SideBarItem label='Alberto el militar' show={show}/>
+    <SideBarItems items={items} show={show}/>
   </nav> );
 }
  

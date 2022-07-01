@@ -1,12 +1,9 @@
 import React from 'react';
 
-const Icon = ({name, containerClassName, iconClassName, url}) => {
+const Icon = ({name, containerClassName, iconClassName}) => {
   const path = `/images/icons/${name}`;
-  const handleClick = () => {
-    console.log("ve para : ", url);
-  }
   return (
-    <div className={containerClassName} onClick={handleClick}>
+    <div className={containerClassName}>
       <img src={path} className={iconClassName} alt="aka" />
     </div>
   );
