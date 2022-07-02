@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import SideBarHandle from './sideBarHandle';
 import SideBarItems from './sideBarItems';
 
 const items = [
@@ -15,9 +16,10 @@ const SideBar = (props) => {
   const getClassName = () => {
     return show ? 'md:w-[15%]' : 'md:w-[5%] md:items-center';
   }
-  return ( <nav className={`flex md:flex-col min-h-[5vh] bg-cyan-700 ${getClassName()}`}>
-    <button onClick={()=>setShow(!show)}>{show?'Hide':'Show'}</button>
-    <SideBarItems items={items} show={show}/>
+  const handleShow = () => setShow(!show);
+  return ( <nav className={`flex justify-center md:justify-start md:flex-col min-h-[5vh] bg-slate-400 ${getClassName()}`}>
+    <SideBarHandle show={show} handleShow={handleShow} />
+    <SideBarItems items={items} show={show} />
   </nav> );
 }
  
