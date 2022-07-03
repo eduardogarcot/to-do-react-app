@@ -5,10 +5,10 @@ import SideBarItems from './sideBarItems';
 
 const items = [
   {label:'Home', iconName:'home.png', url:'/home'},
-  {label:'Projects', iconName:'computer.png', url:'/board'},
+  {label:'Projects', iconName:'computer.png', url:'/projects'},
   {label:'Board', iconName:'board.png', url:'/board'},
-  {label:'Analytics', iconName:'performance.png', url:'/home'},
-  {label:'Settings', iconName:'settings.png', url:'/home'}
+  {label:'Analytics', iconName:'performance.png', url:'/analytics'},
+  {label:'Settings', iconName:'settings.png', url:'/settings'}
 ];
 
 const SideBar = (props) => {

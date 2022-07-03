@@ -541,6 +541,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 10vh;
 }
 
+.min-h-\[85rem\] {
+  min-height: 85rem;
+}
+
+.min-h-\[60rem\] {
+  min-height: 60rem;
+}
+
+.min-h-\[30rem\] {
+  min-height: 30rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -587,6 +599,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 90%;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-\[30\%\] {
+  width: 30%;
+}
+
 .min-w-\[10rem\] {
   min-width: 10rem;
 }
@@ -627,6 +651,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .rounded {
@@ -689,6 +717,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-sky-600 {
   --tw-border-opacity: 1;
   border-color: rgb(2 132 199 / var(--tw-border-opacity));
+}
+
+.border-slate-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
 }
 
 .bg-sky-300 {
@@ -754,6 +787,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .font-logo {
@@ -873,6 +911,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 50%;
   }
 
+  .md\:w-6 {
+    width: 1.5rem;
+  }
+
   .md\:translate-y-3\/4 {
     --tw-translate-y: 75%;
     -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -911,5 +953,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:px-\[30\%\] {
     padding-left: 30%;
     padding-right: 30%;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
