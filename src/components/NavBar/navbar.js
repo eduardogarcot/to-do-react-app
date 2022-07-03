@@ -33,14 +33,15 @@ const NavBar = () => {
     ];
 
     if (noNavbar.includes(location.pathname)) return <></>;
+    
     return (<>
-        <nav className='flex flex-row sticky top-0 z-50 items-center  p-4 w-full min-h-[8rem] md:min-h-[5rem] border-b border-slate-400 border-solid bg-sky-300 '>
+        <nav className='flex flex-row sticky top-0 z-50 items-center p-4 w-full min-h-[10vh] border-b border-slate-400 border-solid bg-sky-300 '>
             <div className='flex w-3/4 '>
                 <Logo theme='navbar'/>
             </div>
-            <div className='flex w-1/4 justify-center'>
+            <div className='flex w-1/4 mr-4 justify-end'>
                 {!isLogged && <button 
-                        className='w-1/2 p-2 border border-solid bg-white border-slate-400 rounded hover:bg-blue-200 hover:border-white' 
+                        className='hidden md:block w-1/2 p-2 border border-solid bg-white border-slate-400 rounded hover:bg-blue-200 hover:border-white' 
                         onClick={handleClickLogin}
                     >
                         Login

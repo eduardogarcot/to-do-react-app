@@ -12,7 +12,8 @@ import Logo from 'components/Logo';
 const LoginForm = () => {
     const location = useLocation();
     const dispatch = useDispatch();
-    const navigate = useNavigate();if (auth.isLoggedIn) {
+    const navigate = useNavigate();
+    if (auth.isLoggedIn) {
         const { from } = location.state || { from: { pathname: "/" } };
         navigate(from, { replace: true });
       }
@@ -61,7 +62,7 @@ const LoginForm = () => {
         });
     }; 
     
-    return (<>
+    return (<div className='px-2 py-16 md:px-16'>
     <Logo theme='login'/>
     <div className='w-[90%] md:w-1/2 mx-[5%] md:mx-[25%] my-10'>
             <SimpleControlledForm
@@ -71,7 +72,7 @@ const LoginForm = () => {
                 handleSubmit={handleClick}
             />
         </div>        
-    </>
+    </div>
       );
 }
  
