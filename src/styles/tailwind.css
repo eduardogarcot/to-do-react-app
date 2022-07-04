@@ -553,6 +553,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 30rem;
 }
 
+.min-h-\[2rem\] {
+  min-height: 2rem;
+}
+
+.min-h-\[8rem\] {
+  min-height: 8rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -893,6 +901,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:min-h-\[85vh\] {
     min-height: 85vh;
+  }
+
+  .md\:min-h-\[5rem\] {
+    min-height: 5rem;
   }
 
   .md\:w-\[15\%\] {
