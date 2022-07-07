@@ -5,7 +5,7 @@ import Icon from 'components/Icons';
 // CLASSNAMES
 const CONTAINER_CN='flex flex-col w-full mx-2 mb-2 border border-solid border-slate-300';
 const CONTAINER_INFO_CN='flex justify-between w-full p-2 bg-slate-300';
-const TITLE_CN = '';
+const TITLE_CN = 'pr-1';
 const CONTAINER_BUTTONS_CN='flex';
 const EDIT_BTN_CN = 'w-[1.5rem] h-[1.5rem] p-1 mr-[5%] border border-solid border-slate-800 bg-white rounded hover:bg-slate-200 hover:cursor-pointer';
 const DELETE_BTN_CN = 'w-[1.5rem] h-[1.5rem] p-1 border border-solid border-slate-800 bg-white rounded hover:bg-slate-200 hover:cursor-pointer';
