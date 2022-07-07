@@ -1,5 +1,6 @@
 import axios from "axios";
 import {toast} from 'react-toastify';
+import auth from "./auth";
 //import auth from "./authService";
 
 //axios.defaults.baseURL = process.env.REACT_APP_API_URL;
@@ -15,6 +16,12 @@ axios.interceptors.response.use(null, error => {
   }
 
   return Promise.reject(error);
+});
+
+axios.interceptors.request.use(function (config) {
+  const token = auth.getToken();
+  config.headers.Authorization = token;
+  return config;
 });
 
 /*  export function setJWT(jwt) {
