@@ -34,8 +34,9 @@ const NavBar = () => {
 
     useEffect(()=>{
         if(auth.isLoggedIn()) dispatch(logIn());
-        else auth.logOut();
+        //else auth.logOut();
     },[dispatch])
+
     if (noNavbar.includes(location.pathname)) return <></>;
     
     return (<>
