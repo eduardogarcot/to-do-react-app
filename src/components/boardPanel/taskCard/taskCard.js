@@ -1,7 +1,8 @@
 // IMPORTS
 import React from 'react';
 import Icon from 'components/Icons';
-
+import { useDispatch } from 'react-redux';
+import { removeToDoTaskById } from 'redux/slices/todoList';
 // CLASSNAMES
 const CONTAINER_CN='flex flex-col w-full mx-2 mb-2 border border-solid border-slate-300';
 const CONTAINER_INFO_CN='flex justify-between w-full p-2 bg-slate-300';
@@ -17,16 +18,27 @@ const TaskCard = ({
   id,
   labelId,
   title,
-  description
+  description,
+  status
 }) => {
-  
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(removeToDoTaskById({status,id}));
+  }
+
+  const handleDragStart = (e) => {
+    e.stopPropagation();
+    e.dataTransfer.setData('id', id);
+    e.dataTransfer.effectAllowed = "copyMove";
+  }
+
   return ( <>
-    <div className={CONTAINER_CN} draggable>
+    <div className={CONTAINER_CN} draggable onDragStart={(e)=>handleDragStart(e)}>
         <div className={CONTAINER_INFO_CN}>
           <p className={TITLE_CN}>{labelId}-{title}</p>
           <div className={CONTAINER_BUTTONS_CN}>
             <Icon name='edit.png' containerClassName={EDIT_BTN_CN}/>
-            <Icon name='trash.png' containerClassName={DELETE_BTN_CN}/>
+            <Icon name='trash.png' containerClassName={DELETE_BTN_CN} handleClick={handleClick}/>
           </div>
         </div>
         <div className={CONTAINER_DESCRIPTION_CN}>
