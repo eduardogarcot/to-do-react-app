@@ -27,10 +27,10 @@ const Board = () => {
   },[dispatch])
   return (<>
     <div className={CONTAINER_CN}>
-      {Object.keys(tasksLists).map(status => {
+      {Object.keys(tasksLists).map((status,index) => {
         const name = stringHelper.cleanStrWithUnderscore(status);
         const cards = tasksLists[status];
-        return <BoardPanel name={name} cards={cards}/>
+        return <BoardPanel key={index} name={name} status={status} cards={cards}/>
       })}
     </div>
   </>
