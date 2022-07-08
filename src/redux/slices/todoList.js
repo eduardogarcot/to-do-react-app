@@ -1,10 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  TO_DO : [],
-  IN_PROGRESS: [],
-  DONE: []
-};
+const initialState = [];
 
 export const toDoListSlice = createSlice({
   name: 'toDoList',
@@ -13,18 +9,35 @@ export const toDoListSlice = createSlice({
     pushToDo: (state, action) => action.payload,
     cleanToDo: () => initialState,
     pushToDoTask: (state,action) => {
-      const {status, task} = action.payload;
-      state[status].push(task);
+      const {task} = action.payload;
+      state.push(task);
     },
     removeToDoTaskById: (state,action) => {
-      const {status, id} = action.payload;
-      state[status] = state[status].filter((task)=> task.id !== id);
-    }
+      const { id } = action.payload;
+      state= state.filter((task)=> task.id !== id);
+    },
+    moveTaskTo: (state, action) => {
+      const {id, status} = action.payload;
+      const index = state.findIndex(task=>id===task.id);
+      state[index].status = status;
+    },
     }
   },
 )
 
 // Action creators are generated for each case reducer function
-export const { pushToDo, cleanToDo, pushToDoTask, removeToDoTaskById} = toDoListSlice.actions;
-export const selectToDoList = (state) => state.toDoList;
+export const { pushToDo, cleanToDo, pushToDoTask, removeToDoTaskById, moveTaskTo} = toDoListSlice.actions;
+
+export const selectToDoList = (state) => {
+  const classifiedTask = {
+    TO_DO : [],
+    IN_PROGRESS: [],
+    DONE: []
+  }
+  state.toDoList.forEach(item => classifiedTask[item.status].push(item));
+  return classifiedTask;
+}
+
+
+
 export default toDoListSlice.reducer;
