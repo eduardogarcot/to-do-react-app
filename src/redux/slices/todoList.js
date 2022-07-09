@@ -14,7 +14,7 @@ export const toDoListSlice = createSlice({
     },
     removeToDoTaskById: (state,action) => {
       const { id } = action.payload;
-      state= state.filter((task)=> task.id !== id);
+      return state.filter((task)=> task.id !== id);
     },
     moveTaskTo: (state, action) => {
       const {id, status} = action.payload;

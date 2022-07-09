@@ -23,7 +23,7 @@ const TaskCard = ({
 }) => {
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(removeToDoTaskById({status,id}));
+    dispatch(removeToDoTaskById({id}));
   }
 
   const handleDragStart = (e) => {

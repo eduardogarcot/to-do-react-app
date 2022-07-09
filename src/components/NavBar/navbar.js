@@ -1,7 +1,7 @@
-import React,{ useEffect, useState } from 'react';
+import React,{ useState } from 'react';
 import auth from 'services/auth';
 import { useSelector, useDispatch } from 'react-redux';
-import { logOut,logIn, selectIsLogged } from 'redux/slices/isLogged';
+import { logOut, selectIsLogged } from 'redux/slices/isLogged';
 import { useLocation, useNavigate} from 'react-router-dom';
 import unknowUser from 'assets/images/unknown-user.svg';
 import { toast } from 'react-toastify';
@@ -32,10 +32,6 @@ const NavBar = () => {
         {label: 'Edit Profile', handle: handleClickEditProfile},
     ];
 
-    useEffect(()=>{
-        if(auth.isLoggedIn()) dispatch(logIn());
-        //else auth.logOut();
-    },[dispatch])
 
     if (noNavbar.includes(location.pathname)) return <></>;
     
