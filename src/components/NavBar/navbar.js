@@ -55,10 +55,10 @@ const NavBar = () => {
                     >
                         <img className='p-2' src={unknowUser} alt='unknown-user' />
                         {toogleUserMenu && <>
-                        <div className='absolute border bg-white border-gray-500  mt-4 bottom-0 translate-y-[40%] md:translate-y-3/4' >
+                        <div className='absolute border-2 rounded-b-lg rounded-l-lg bg-white border-gray-500 mt-4 bottom-0 translate-x-[-90%] translate-y-[40%] md:translate-y-3/4' >
                             <ol>
                                 {elementsMenu.map((item, index)=>
-                                  <li className='border p-1 cursor-pointer hover:bg-slate-200' onClick={item.handle} key={index}>{item.label}</li>
+                                  <li className='p-1 cursor-pointer hover:bg-slate-200' onClick={item.handle} key={index}>{item.label}</li>
                                 )}
                             </ol>
                         </div>

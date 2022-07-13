@@ -22,6 +22,5 @@ const TASKS = [{
 
 const mockObject = {
   TASKS,
-
 }
 export default mockObject;
