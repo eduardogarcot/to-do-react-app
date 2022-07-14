@@ -1,22 +1,20 @@
 import mocks from "utils/mocks";
 
 const getTasks = () => {
-  const tasks = mocks.TASKS;
-  const tasksCards = {
-    TO_DO : [],
-    IN_PROGRESS : [],
-    DONE: [],
-  };
-  tasks.forEach((task)=>{
-    if(tasksCards[task.status]) tasksCards[task.status].push(task);
-  })
-  return tasksCards;
+  return mocks.TASKS;
 }
 
+const getTasksByProject = (project_id) => {
+  return [];
+}
+const getTaskById = (id) => {
+  return {};
+}
 
 const exportCollection = {
   getTasks,
-
+  getTasksByProject,
+  getTaskById
 }
 
 

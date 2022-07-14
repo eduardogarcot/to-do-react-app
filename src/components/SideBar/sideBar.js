@@ -17,7 +17,7 @@ const SideBar = (props) => {
     return show ? 'md:w-[15%]' : 'md:w-[5%] md:items-center';
   }
   const handleShow = () => setShow(!show);
-  return ( <nav className={`flex justify-center md:justify-start md:flex-col min-h-[5vh] bg-slate-400 ${getClassName()}`}>
+  return ( <nav className={`flex justify-center md:justify-start md:flex-col min-h-[5vh] bg-slate-400 transition-[width] duration-300 ${getClassName()}`}>
     <SideBarHandle show={show} handleShow={handleShow} />
     <SideBarItems items={items} show={show} />
   </nav> );
