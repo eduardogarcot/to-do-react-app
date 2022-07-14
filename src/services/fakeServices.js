@@ -4,10 +4,17 @@ const getTasks = () => {
   return mocks.TASKS;
 }
 
+const getTasksByProject = (project_id) => {
+  return [];
+}
+const getTaskById = (id) => {
+  return {};
+}
 
 const exportCollection = {
   getTasks,
-
+  getTasksByProject,
+  getTaskById
 }
 
 
