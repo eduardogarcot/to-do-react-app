@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+import * as _ from 'lodash'
 const initialState = [];
 
 export const toDoListSlice = createSlice({
@@ -20,6 +20,7 @@ export const toDoListSlice = createSlice({
       const {id, status} = action.payload;
       const index = state.findIndex(task=>id===task.id);
       state[index].status = status;
+      
     },
     }
   },
@@ -35,6 +36,9 @@ export const selectToDoList = (state) => {
     DONE: []
   }
   state.toDoList.forEach(item => classifiedTask[item.status].push(item));
+  Object.keys(classifiedTask).forEach(key=>{
+    _.sortBy(classifiedTask[key],(item) => item.labelId);
+  })
   return classifiedTask;
 }
 
