@@ -42,6 +42,6 @@ export const selectToDoList = (state) => {
   return classifiedTask;
 }
 
-
+export const selectAllTask = (state) => state.toDoList;
 
 export default toDoListSlice.reducer;
