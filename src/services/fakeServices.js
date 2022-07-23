@@ -11,6 +11,14 @@ const getTaskById = (id) => {
   return {};
 }
 
+const getProjects = () => {
+  return [];
+}
+
+const getProjectById = (id) => {
+  return {};
+}
+
 const exportCollection = {
   getTasks,
   getTasksByProject,
