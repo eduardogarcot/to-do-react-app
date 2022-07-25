@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import toDoReducer from './slices/todoList';
 import isLoggedReducer from './slices/isLogged';
+import projectsReducer from './slices/projects';
 
 export const store = configureStore({
   reducer: {
       toDoList: toDoReducer,
       isLogged: isLoggedReducer,
-    //name : // reducer, 
+      projects : projectsReducer, 
     //posts: postsReducer,
     //comments: commentsReducer,
     //users: usersReducer,
