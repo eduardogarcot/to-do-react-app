@@ -1,18 +1,19 @@
-import mocks from "utils/mocks";
-
 const getTasks = () => {
-  return mocks.TASKS;
+  const tasks = require('./mocks/tasks.json');
+  return tasks;
 }
 
 const getTasksByProject = (project_id) => {
   return [];
 }
+
 const getTaskById = (id) => {
   return {};
 }
 
 const getProjects = () => {
-  return [];
+  const projects = require('./mocks/projects.json');
+  return projects;
 }
 
 const getProjectById = (id) => {
@@ -22,7 +23,9 @@ const getProjectById = (id) => {
 const exportCollection = {
   getTasks,
   getTasksByProject,
-  getTaskById
+  getTaskById,
+  getProjects,
+  getProjectById
 }
 
 
