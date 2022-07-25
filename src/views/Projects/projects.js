@@ -1,9 +1,11 @@
+// IMPORTS
 import React, {useEffect} from 'react';
-import ProjectsPanel from 'components/projectsPanel';
-import http from 'services/http';
 import { useDispatch, useSelector } from 'react-redux';
+import http from 'services/http';
+import ProjectsPanel from 'components/projectsPanel';
 import { selectProjects, pushProjectsList } from 'redux/slices/projects';
 
+// COMPONENT
 const Projects = () => {
   const projects = useSelector(selectProjects);
   const dispatch = useDispatch();
