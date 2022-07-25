@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import * as _ from 'lodash'
+//import * as _ from 'lodash'
 const initialState = [];
 
 export const projects = createSlice({
