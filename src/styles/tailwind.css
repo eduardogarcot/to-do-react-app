@@ -509,14 +509,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2.5rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mr-4 {
@@ -561,6 +561,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[1\.5rem\] {
   height: 1.5rem;
+}
+
+.h-\[2rem\] {
+  height: 2rem;
 }
 
 .min-h-\[5vh\] {
@@ -627,6 +631,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[1\.5rem\] {
   width: 1.5rem;
+}
+
+.w-\[2rem\] {
+  width: 2rem;
 }
 
 .min-w-\[10rem\] {
@@ -794,6 +802,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200 {
@@ -967,6 +985,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-slate-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-sky-300:hover {
