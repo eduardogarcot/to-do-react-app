@@ -4,7 +4,9 @@ const getTasks = () => {
 }
 
 const getTasksByProject = (project_id) => {
-  return [];
+  const allTasks = require('./mocks/tasks.json');
+  const tasks = allTasks.filter(task => task.project_id === project_id);
+  return tasks;
 }
 
 const getTaskById = (id) => {

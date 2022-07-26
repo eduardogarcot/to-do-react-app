@@ -38,5 +38,45 @@
       "description": "Design interface for modules and submodules that will be used in Projects view",
       "status": "TO_DO",
       "project_id": "a0001"
+    },
+    {
+      "id": "00006",
+      "labelId": "AB_01",
+      "title": "Setting Up Local Development Environment",
+      "description": "Setting Up Local Development Environment",
+      "status": "IN_PROGRESS",
+      "project_id": "a0002"
+    },
+    {
+      "id": "00007",
+      "labelId": "AB_02",
+      "title": "Design interface for main module",
+      "description": "Design interface for modules and submodules that will be used in Analytics view",
+      "status": "TO_DO",
+      "project_id": "a0002"
+    },
+    {
+      "id": "00008",
+      "labelId": "AB_03",
+      "title": "Design connection with fut api",
+      "description": "Design connection with fut api",
+      "status": "TO_DO",
+      "project_id": "a0002"
+    },
+    {
+      "id": "00009",
+      "labelId": "CCR_01",
+      "title": "Design interface for analytics module",
+      "description": "Design interface for modules and submodules that will be used in Analytics view",
+      "status": "TO_DO",
+      "project_id": "a0003"
+    },
+    {
+      "id": "00010",
+      "labelId": "CCR_02",
+      "title": "Design interface for Projects module",
+      "description": "Design interface for modules and submodules that will be used in Projects view",
+      "status": "TO_DO",
+      "project_id": "a0003"
     }
   ]

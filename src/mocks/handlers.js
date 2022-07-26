@@ -14,6 +14,19 @@ export const handlers = [
     else return res(ctx.status(401));
   }),
   // Request for Obtain all Task related to a specific Project
+  rest.get('/:project_id/tasks', (req, res, ctx) => {
+    const {authorization} = req.headers._headers;
+    const {project_id} = req.params;
+    if (authorization !== 'asdaS13rfnalsdKVdfh13fdvaeriAsDFA213Q') return res(ctx.status(401));
+    else {
+      const response = apiServices.getTasksByProject(project_id);
+      return res(
+        ctx.status(200),
+        ctx.json(response)
+      );
+    }
+  }),
+  // Request for Obtain all Tasks
   rest.get('/tasks', (req, res, ctx) => {
     const {authorization} = req.headers._headers;
     if (authorization !== 'asdaS13rfnalsdKVdfh13fdvaeriAsDFA213Q') return res(ctx.status(401));

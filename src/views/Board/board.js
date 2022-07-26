@@ -5,6 +5,7 @@ import http from 'services/http';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectToDoList, pushToDo} from 'redux/slices/todoList';
 import stringHelper from 'utils/strHelper';
+import { selectCurrentProject } from 'redux/slices/currentProject';
 
 // CLASSNAMES & CONSTANT
 const CONTAINER_CN = 'flex flex-row w-full justify-around';
@@ -13,9 +14,10 @@ const CONTAINER_CN = 'flex flex-row w-full justify-around';
 const Board = () => {
   const dispatch = useDispatch();
   const tasksLists = useSelector(selectToDoList);
+  const currentProject = useSelector(selectCurrentProject);
   
   useEffect(()=>{
-    http.get('/tasks')
+    http.get(`/${currentProject.id}/tasks`)
       .then((response)=>{
         const {data} = response;
         dispatch(pushToDo(data));
@@ -24,7 +26,7 @@ const Board = () => {
         console.log(error);
         console.log("se murioooooooo");
       })
-  },[dispatch])
+  },[dispatch,currentProject])
   return (<>
     <div className={CONTAINER_CN}>
       {Object.keys(tasksLists).map((status,index) => {
