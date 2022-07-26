@@ -4,11 +4,6 @@ import moment from 'moment';
 const TOKEN_KEY = 'token';
 const TOKEN_EXPIRATION = 'token_expiration';
 const ACCOUNT_ID_KEY = 'account_id';
-const FAKE_USERS = [
-    {_id: 'abcdefg', username: 'admin@freelancer.io', password: 'Admin123@'},
-    {_id: '2caevd2', username: 'edugarcot@yopmail.com', password: 'Ch1ch0ElCo!o'},
-    {_id: 'o95vre8', username: 'admin@todo.com', password: 'Test123!'}
-];
 
 const setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
 const setExpirationToken = (expiryDate) => localStorage.setItem(TOKEN_EXPIRATION, expiryDate);
@@ -38,14 +33,15 @@ export const isLoggedIn = () => {
 }
 
 const fakeLoginService = (username, password) => {
-    const user = FAKE_USERS.find(user => user.username === username && user.password===password);
+    const users = require('./mocks/users.json');
+    const user = users.find(user => user.username === username && user.password===password);
     const response = {};
-    
     if (user) {
         response.exist = true;
         response.token = 'asdaS13rfnalsdKVdfh13fdvaeriAsDFA213Q';
         response.expiryDate = Date.now();
         response.accountId = user._id;
+        response.currentProjectId = user.currentProjectId;
     }
     else
         response.exist = false;
