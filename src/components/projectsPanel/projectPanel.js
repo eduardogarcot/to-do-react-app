@@ -16,7 +16,7 @@ const ProjectsPanel = ({projects}) => {
     const handleSelectProject = (id) => {
         console.log("Selected", id);
     }
-    
+    const checkProject = (id) => id === 'a0001'; 
     return ( 
     <div className='flex flex-col m-4 items-center shadow-xl border-2 border-slate-200'>
         <Typography variant="h5" component="p" className='w-full p-2 bg-slate-300'> 
@@ -27,7 +27,7 @@ const ProjectsPanel = ({projects}) => {
                 key={project.id}
                 id={project.id}
                 title={project.title}
-                isSelected={true}
+                isSelected={checkProject(project.id)}
                 handleEdit={handleEditProject}
                 handleDelete={handleDeleteProject}
                 handleSelectProject={handleSelectProject}
