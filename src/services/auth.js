@@ -5,9 +5,9 @@ const TOKEN_KEY = 'token';
 const TOKEN_EXPIRATION = 'token_expiration';
 const ACCOUNT_ID_KEY = 'account_id';
 const FAKE_USERS = [
-    {_id: 'abcdefg', username: 'admin@freelancer.io', password: 'Admin123@'},
-    {_id: '2caevd2', username: 'edugarcot@yopmail.com', password: 'Ch1ch0ElCo!o'},
-    {_id: 'o95vre8', username: 'admin@todo.com', password: 'Test123!'}
+    {_id: 'abcdefg', username: 'admin@freelancer.io', password: 'Admin123@', currentProjectId: 'a0001'},
+    {_id: '2caevd2', username: 'edugarcot@yopmail.com', password: 'Ch1ch0ElCo!o', currentProjectId: 'a0002'},
+    {_id: 'o95vre8', username: 'admin@todo.com', password: 'Test123!', currentProjectId: 'a0003'}
 ];
 
 const setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
@@ -46,6 +46,7 @@ const fakeLoginService = (username, password) => {
         response.token = 'asdaS13rfnalsdKVdfh13fdvaeriAsDFA213Q';
         response.expiryDate = Date.now();
         response.accountId = user._id;
+        response.currentProjectId = user.currentProjectId;
     }
     else
         response.exist = false;

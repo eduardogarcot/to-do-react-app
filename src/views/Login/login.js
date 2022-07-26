@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { logIn } from 'redux/slices/isLogged';
 import Logo from 'components/Logo';
+import { setCurrentProject } from 'redux/slices/currentProject';
 
 const LoginForm = () => {
     const location = useLocation();
@@ -54,7 +55,11 @@ const LoginForm = () => {
             auth.logIn(response.data);
             const { from } = location.state || { from: { pathname: "/home" } };
             dispatch(logIn());
-            navigate(from, { replace: true });
+            const getProjectIdURL = `/project/${response.data.currentProjectId}`;
+            http.get(getProjectIdURL).then((res) => {
+                dispatch(setCurrentProject(res.data))
+                navigate(from, { replace: true });
+            })    
         })
         .catch((error) => {
             console.log(error);

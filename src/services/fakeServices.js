@@ -17,7 +17,9 @@ const getProjects = () => {
 }
 
 const getProjectById = (id) => {
-  return {};
+  const projects = require('./mocks/projects.json');
+  const project = projects.find(project => project.id === id);
+  return project;
 }
 
 const exportCollection = {
