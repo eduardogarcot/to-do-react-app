@@ -39,13 +39,26 @@ export const handlers = [
   }),
   // Request to Obtain Project Data by Id
   rest.get('/project/:id', (req, res, ctx) => {
-    debugger;
     const {authorization} = req.headers._headers;
     const {id} = req.params;
     console.log('id', id);
     if (authorization !== 'asdaS13rfnalsdKVdfh13fdvaeriAsDFA213Q') return res(ctx.status(401));
     else {
       const response = apiServices.getProjectById(id);
+      return res(
+        ctx.status(200),
+        ctx.json(response)
+      );
+    }
+  }),
+  // Request to Obtain Current Project Data by Account Id
+  rest.get('/user/project/:id', (req, res, ctx) => {
+    const {authorization} = req.headers._headers;
+    const {id} = req.params;
+    console.log('id', id);
+    if (authorization !== 'asdaS13rfnalsdKVdfh13fdvaeriAsDFA213Q') return res(ctx.status(401));
+    else {
+      const response = apiServices.getCurrentProjectByAccount(id);
       return res(
         ctx.status(200),
         ctx.json(response)

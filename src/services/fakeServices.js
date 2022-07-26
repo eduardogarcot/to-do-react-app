@@ -22,12 +22,20 @@ const getProjectById = (id) => {
   return project;
 }
 
+const getCurrentProjectByAccount = (id) => {
+  const users = require('./mocks/users.json');
+  const {currentProjectId} = users.find(user => user._id === id);
+  const project = getProjectById(currentProjectId);
+  return project; 
+};
+
 const exportCollection = {
   getTasks,
   getTasksByProject,
   getTaskById,
   getProjects,
-  getProjectById
+  getProjectById,
+  getCurrentProjectByAccount,
 }
 
 

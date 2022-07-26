@@ -11,11 +11,23 @@ import auth from 'services/auth';
 import NavBar from 'components/NavBar';
 import MainContent from 'components/mainContent';
 import Footer from 'components/Footer';
+import http from 'services/http';
+import { setCurrentProject } from 'redux/slices/currentProject';
 
 function App() {
   const dispatch=useDispatch();
   useEffect(()=>{
-    if(auth.isLoggedIn()) dispatch(logIn());
+    if(auth.isLoggedIn()) {
+      dispatch(logIn());
+      const url = `/user/project/${auth.getAccountId()}`;
+      http.get(url)
+        .then(response=>{
+          dispatch(setCurrentProject(response.data));
+        })
+        .catch(error=>{
+          console.log('error', error);
+        })
+    }
     //else auth.logOut();
   },[dispatch])
 
