@@ -1,3 +1,6 @@
+import { idGenerator } from './idGenerator';
+
+
 const getTasks = () => {
   const tasks = require('./mocks/tasks.json');
   return tasks;
@@ -26,14 +29,16 @@ const getProjectById = (id) => {
 
 const getCurrentProjectByAccount = (id) => {
   const users = require('./mocks/users.json');
-  const {currentProjectId} = users.find(user => user._id === +id);
+  const {currentProjectId} = users.find(user => user._id === id);
   const project = getProjectById(currentProjectId);
   return project; 
 };
 
 const createNewProject = (project) => {
-
-  return {};
+  const newId = idGenerator('projects');
+  // There should be the addition to database, but it's a mocking project. 
+  // Then, it gonna return the new object simulating addition to database
+  return {...project, id: newId};
 }
 
 const exportCollection = {
@@ -43,6 +48,7 @@ const exportCollection = {
   getProjects,
   getProjectById,
   getCurrentProjectByAccount,
+  createNewProject
 }
 
 
