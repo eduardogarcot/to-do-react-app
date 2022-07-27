@@ -11,8 +11,6 @@ const ControlledField = ({
     value,
 }) => {
     switch (type) {
-        case 'text':
-            return <p>Nothing to show</p>
         default:
             return (
                 <DefaultInput 
