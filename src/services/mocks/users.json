@@ -3,18 +3,18 @@
       "_id": "abcdefg",
       "username": "admin@freelancer.io",
       "password": "Admin123@",
-      "currentProjectId": "a0001"
+      "currentProjectId": 1
     },
     {
       "_id": "2caevd2",
       "username": "edugarcot@yopmail.com",
       "password": "Ch1ch0ElCo!o",
-      "currentProjectId": "a0002"
+      "currentProjectId": 2
     },
     {
       "_id": "o95vre8",
       "username": "admin@todo.com",
       "password": "Test123!",
-      "currentProjectId": "a0003"
+      "currentProjectId": 3
     }
   ]

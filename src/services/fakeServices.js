@@ -5,7 +5,7 @@ const getTasks = () => {
 
 const getTasksByProject = (project_id) => {
   const allTasks = require('./mocks/tasks.json');
-  const tasks = allTasks.filter(task => task.project_id === project_id);
+  const tasks = allTasks.filter(task => task.project_id === +project_id);
   return tasks;
 }
 
@@ -20,16 +20,21 @@ const getProjects = () => {
 
 const getProjectById = (id) => {
   const projects = require('./mocks/projects.json');
-  const project = projects.find(project => project.id === id);
+  const project = projects.find(project => project.id === +id);
   return project;
 }
 
 const getCurrentProjectByAccount = (id) => {
   const users = require('./mocks/users.json');
-  const {currentProjectId} = users.find(user => user._id === id);
+  const {currentProjectId} = users.find(user => user._id === +id);
   const project = getProjectById(currentProjectId);
   return project; 
 };
+
+const createNewProject = (project) => {
+
+  return {};
+}
 
 const exportCollection = {
   getTasks,
