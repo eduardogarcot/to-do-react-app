@@ -14,7 +14,7 @@ const LoginForm = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    if (auth.isLoggedIn) {
+    if (auth.isLoggedIn()) {
         const { from } = location.state || { from: { pathname: "/" } };
         navigate(from, { replace: true });
       }
@@ -48,8 +48,7 @@ const LoginForm = () => {
     });
     
     const handleClick = async (values) => {
-        console.log(values);
-        isLoggedIn();
+        //isLoggedIn();
         http.post('/login', values)
         .then((response) => {
             auth.logIn(response.data);
