@@ -18,7 +18,7 @@ export const toDoListSlice = createSlice({
     },
     moveTaskTo: (state, action) => {
       const {id, status} = action.payload;
-      const index = state.findIndex(task=>id===task.id);
+      const index = state.findIndex(task=>+id===task.id);
       state[index].status = status;
       
     },
